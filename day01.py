@@ -1,0 +1,1 @@
+print("git init connects to git")
