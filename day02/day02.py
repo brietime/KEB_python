@@ -28,3 +28,17 @@ test9 = 77
 _9test =71 #okay in underline
 
 # False = 123 #no keywords 
+
+x = 2
+y = x + 5
+print(y)
+
+print(type(3.14))
+print(isinstance(3.14, float))
+print(isinstance("Inha", float))
+
+artists = ['bts','뉴진스', '핑클','ses', 'hot','블랙핑크']
+groups = artists
+print(artists, groups)
+artists[2] = '세븐틴'
+print(artists, groups)
