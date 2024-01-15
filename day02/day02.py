@@ -81,3 +81,18 @@ print(ord('B'), ord('Z'),ord('a'),ord('2'))
 #(f - 32 ) x 5/9 = c
 fahrenheit = float(input('Input Farenheit: '))
 print(f'Fahrenheit : {fahrenheit}F, Celcius {((fahrenheit - 32.0)*5.0/9.0):.2f}C')
+
+print(int('1A',16))
+
+print(4 + 7.0) # numeric type mix
+
+print(True + 2) # numeric type mix
+
+menu = input("1) fahrenheit -> celcius    2) Celcius -> fahrenheit    3) Quit program")
+
+if menu  == '1':
+    fahrenheit = float(input('Input fahrenheit: '))
+    print(f'Fahrenheit: {fahrenheit}F, Celcius: {((fahrenheit-32.0)*5.0/9.0):.4f}C')
+elif menu == '2':
+    celcius = float(input('Input Celcius: '))
+    print(f'Celcius: {celcius}C, fahrenheit: {((celcius *9.0/5.0)+32.0):.4f}F')
