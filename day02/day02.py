@@ -135,3 +135,19 @@ if temp:
     print("원소가 존재하는 리스트")
 else:
     print("비어있는 리스트")
+    
+    
+vowels = 'aeiou'
+letter = 'o'
+letter in vowels
+
+vowel_set= {'a','e','i','o','u'}
+letter = 'k'
+if letter in vowel_set:
+    print(f'{letter} is a vowel')
+else:
+    print(f'{letter} is a consonant')
+    
+letter = input('Input a letter: ')
+
+
