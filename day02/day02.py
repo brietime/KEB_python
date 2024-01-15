@@ -57,8 +57,8 @@ exponent_number = int(input('Input exponent number: '))
 print(f'밑은 {base_number}, 지수는 {exponent_number}, 결과 값은 {base_number ** exponent_number}')
 print(f'밑은 {base_number}, 지수는 {exponent_number}, 결과 값은 pow{{base_number,exponent_number}}')
 
-#format function
-print('밑은 {0}, 지수는 {1}, 결과 값은 {2}'.format(*args: base_number, exponent_number, pow{base_number,exponent_number}))
+# #format function
+# print('밑은 {0}, 지수는 {1}, 결과 값은 {2}'.format(*args: base_number, exponent_number, pow{base_number,exponent_number}))
 
 first_number = int(input("first number: "))
 second_number = int(input("second number: "))
@@ -149,5 +149,9 @@ else:
     print(f'{letter} is a consonant')
     
 letter = input('Input a letter: ')
-
+vowel_set= {'a','e','i','o','u'}
+if letter in vowel_set:
+    print(f'{letter} is a vowel')
+else:
+    print(f'{letter} is a consonant')
 
