@@ -88,11 +88,50 @@ print(4 + 7.0) # numeric type mix
 
 print(True + 2) # numeric type mix
 
-menu = input("1) fahrenheit -> celcius    2) Celcius -> fahrenheit    3) Quit program")
+menu = input("1) fahrenheit -> celsius    2) Celsius -> fahrenheit    3) Quit program")
 
 if menu  == '1':
     fahrenheit = float(input('Input fahrenheit: '))
-    print(f'Fahrenheit: {fahrenheit}F, Celcius: {((fahrenheit-32.0)*5.0/9.0):.4f}C')
+    print(f'Fahrenheit: {fahrenheit}F, Celsius: {((fahrenheit-32.0)*5.0/9.0):.4f}C')
 elif menu == '2':
-    celcius = float(input('Input Celcius: '))
-    print(f'Celcius: {celcius}C, fahrenheit: {((celcius *9.0/5.0)+32.0):.4f}F')
+    celsius = float(input('Input Celcius: '))
+    print(f'Celsius: {celsius}C, fahrenheit: {((celsius *9.0/5.0)+32.0):.4f}F')
+    
+else: 
+    print('Terminate Program.')
+    
+    
+furry = True
+large = True
+if furry:
+    if large:
+        print("It's a Yeti.")
+    else: 
+        print("It's a 애옹! 왜애애애애애ㅐ아아옹!!!")
+else: 
+    if large: 
+        print("It's a whale.")
+    else: 
+        print("It's a human!")
+    
+color = 'mauve'
+if color == "red": 
+    print("tomato")
+if color == "green":
+    print("spring onion")
+if color == 'mauve':
+    print("bee")
+else:
+    print("seal")
+    
+temp = []
+if temp:
+    print("원소가 존재하는 리스트")
+else:
+    print("비어있는 리스트")
+    
+temp = [0]
+if temp:
+    print("원소가 존재하는 리스트")
+else:
+    print("비어있는 리스트")
