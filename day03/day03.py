@@ -105,3 +105,41 @@ try:
     print(f"해당 과목은 금학기에 개설됩니다. 위치는{subjects.find(subject)}번 인덱스로 가시면 됩니다.")
 escept ValueError: 
     print('해당과목은 개설되지 않습니다.')
+    
+setup.capitalize(poem)
+
+print('%s' % 7.03)
+print('%f' % 7.03)
+print('%e' % 7.03)
+print('%g' % 7.03)
+
+
+print('%s' % 42)
+print('%d' % 42)
+print('%x' % 42)
+print('%o' % 42)
+print('%e' %0.7045)
+print('%d%%' % 100)
+
+thing = 'woodchuck'
+
+thing = 98.6
+print('%f' % thing)
+print('%12f' % thing)
+print('%.3f' % thing)
+
+thing = 'woodchuck'
+place = 'lake'
+print('The {1} is in the {0}'.format(place,thing))
+print('The {thing} is in the {place}'.format(place = 'bathtub',thing = 'duck'))
+
+subjects = {'python': 'kim', 'c++':'sung', 'data structure': 'kim', 'database': 'kang'}
+print("The {0[python]} and {0[data structure]} will come".format(subjects))
+
+
+thing = 'woodchuck'
+place = 'lake'
+print('The {:<10s} is in the {:>10s}'.format(place,thing))
+print('The {:!^10s} is in the {:10s}'.format(place,thing))
+print('The {thing.capitalize()} is in the {:>10s}'.format(place,thing))
+print('The {thing} is in the {place}'.format(place = 'bathtub',thing = 'duck'))
