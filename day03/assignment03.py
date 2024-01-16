@@ -47,4 +47,35 @@ while True:
     else: 
         print('Terminate Program.')
         break
-        
+
+
+# 6.5.1
+list_651 = []
+for i in range(3,-1,-1):
+    list_651.append(i)
+print(list_651)
+
+#6.5.2
+guess_me = 7
+number = 1
+while True:
+    if number < guess_me: 
+        print('Too low')
+    elif number == guess_me:
+        print(f'found it! it is {number}!')
+    else: 
+        print('oops!')
+        break
+    
+    number += 1
+    
+#6.5.3
+guess_me = 5
+for number in range(10):
+    if number < guess_me: 
+        print('Too low')
+    elif number == guess_me:
+        print(f'found it! it is {number}!')
+    else: 
+        print('oops!')
+        break
