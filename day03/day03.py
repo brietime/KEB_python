@@ -143,3 +143,4 @@ print('The {:<10s} is in the {:>10s}'.format(place,thing))
 print('The {:!^10s} is in the {:10s}'.format(place,thing))
 print('The {thing.capitalize()} is in the {:>10s}'.format(place,thing))
 print('The {thing} is in the {place}'.format(place = 'bathtub',thing = 'duck'))
+
