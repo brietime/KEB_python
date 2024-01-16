@@ -144,3 +144,116 @@ print('The {:!^10s} is in the {:10s}'.format(place,thing))
 print('The {thing.capitalize()} is in the {:>10s}'.format(place,thing))
 print('The {thing} is in the {place}'.format(place = 'bathtub',thing = 'duck'))
 
+
+number = int(input('Input number: '))
+is_prime = True #cnt 보다 저장공간 절약(int -> boolean)
+i=2
+
+if number < 2 :
+    print(f'{number} is NOT prime number')
+else:
+    while i < number:
+        if number % i == 0:
+            is_prime = False # cnt 보다 operation 소요시간 절약
+            break
+        # print(i,end = ' ')
+        i += 1
+        
+    if is_prime: #비교연산자 == 제거
+        print(f'{number} is prime number')
+    else:
+        print(f'{number} is NOT prime number')
+
+numbers = [1,3,5]
+position =0
+
+# while position <len(numbers):
+#     number = numbers[position]
+#     if number % 2 == 0:
+#         print('Found even number', number)
+#         break
+#     position +=1
+#     else: 
+#         print('No even number found')
+    
+# for and in
+word = 'thud'
+offset = 0
+while offset <len(word):
+    print(word[offset])
+    offset+=1
+    
+for letter in word:
+    print(letter)
+    
+univ = "inha"
+i =0
+while i < len(univ):
+    print (univ[i],end = ' ')
+    i+=1
+
+print() #줄바꿈용
+for letter in univ:
+    print(letter,end =' ')
+    
+# for range
+print() 
+# for k in range(0, len(univ),1):
+for k in range(len(univ)):
+    print(univ[k], end= ' ')
+    
+    
+for letter in word:
+    if letter == 'u':
+        break
+    print(letter)
+    
+number = int(input('Input number: '))
+is_prime = True #cnt 보다 저장공간 절약(int -> boolean)
+i=2
+
+if number < 2 :
+    print(f'{number} is NOT prime number')
+else:
+    for i in range(2,number):
+        if number % i == 0:
+            is_prime = False # cnt 보다 operation 소요시간 절약
+            break
+        
+    if is_prime: #비교연산자 == 제거
+        print(f'{number} is prime number')
+    else:
+        print(f'{number} is NOT prime number')
+
+for x in range(0,3):
+    print(x)
+
+list(range(0,3))
+print(list(range(3,9))) #generator - not remember
+
+for x in range(2,-1, -1):
+    print(x)
+
+list(range(2,-1,-1))
+
+#problem solving
+
+numbers = input("first number Second number: ").split()
+n1 = int(numbers[0])
+n2 = int(numbers[1])
+
+if n1 > n2:
+    n1,n2 = n2,n1
+    
+for i in range(n1,n2+1,1):
+    is_prime = True
+    
+    if i < 2:
+        print(f'{i} is NOT prime number!') 
+    else: 
+        for k in range(2, i):
+            if i % k ==0:
+                is_prime = False
+                break
+        if is_prime:
+            print(i, end = ' ')
