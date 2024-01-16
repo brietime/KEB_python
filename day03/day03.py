@@ -75,3 +75,33 @@ subjects = ["python", "c++", "database"]
 subjects_string = "/".join(subjects)
 print(subjects_string)
 
+print(course)
+# course = course.replace(__old:'KEB', __new:'Inha')
+# print(course)
+
+setup = 'a duck! *goes into... a bar*'
+setup = setup.replace('a', 'the', 1)
+print(setup)
+print(setup.strip('*'))
+
+print(poem)
+print(poem.startswith("All"))
+print(poem.endswith("professor."))
+print(poem.find('said'))
+print(poem.rfind('said'))
+print(poem.rindex('said'))
+
+subjects = "python c++ database linux"
+subject = input('과목을 입력해주세요: ')
+if subjects.find(subject) != 1: 
+    print(f"해당 과목은 금학기에 개설됩니다. 위치는{subjects.find(subject)}번 인덱스로 가시면 됩니다.")
+else: 
+    print('해당과목은 개설되지 않습니다.')
+
+# preview
+subjects = "python c++ database linux"
+subject = input('수강신청과목 입력: ')
+try:
+    print(f"해당 과목은 금학기에 개설됩니다. 위치는{subjects.find(subject)}번 인덱스로 가시면 됩니다.")
+escept ValueError: 
+    print('해당과목은 개설되지 않습니다.')
