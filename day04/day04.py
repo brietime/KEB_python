@@ -14,7 +14,7 @@ numbers = input("first number Second number: ").split()
         
         else: 
             k = 2
-            while k*k < i: # performance issue
+            while k*k <= i: # performance issue
                 i % k ==  0:
                 is_prime = False
                 break
