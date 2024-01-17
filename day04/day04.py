@@ -147,3 +147,99 @@ print(copy_subjects,subjects)
 # len() 길이
 subjects = ['c++', '5', 'data structure', '하늘','database', '구연산', 'java', '9']
 print(len(subjects))
+
+# deep copy, shallow copy
+a = [1,2,3]
+a = b
+b = [1,2,4]
+print(a,b)
+
+#shallow
+subjects = ["a","b","c"]
+a = subjects
+b = subjects.copy()
+c = list(subjects)
+d = subjects[:]
+print(subjects, a, b, c, d)
+subjects[1] = "x"
+print(subjects,  a, b, c, d)
+
+subjects = ["a",["b","c"], "d"]
+a = subjects
+b = subjects.copy()
+c = list(subjects)
+d = subjects[:]
+print(subjects, a, b, c, d) # shallow copy하면 mutable값 변화함
+
+#deep
+
+import copy
+e = copy.deepcopy(a)
+subjects[1][1] = "x"
+print(subjects, a, b, c, d, e)
+
+# python tutor 에서 확인
+
+# 리스트 비교
+cheezes = ['brie','gjetost','havarti']
+for cheeze in cheezes:
+    if cheeze.startswith('g'):
+        print("I wont eat anything that starts with 'g'")
+        break
+    else:
+        print(cheeze)
+        
+cheezes = ['brie','gjetost','havarti']
+fruits = ['banana','apple','mango']
+drinks = ['coffee', 'juice','tea']
+desserts = ['tiramisu','macaron','pie','icecream']
+for cheeze, fruit, drink, dessert in zip(cheezes, fruits, drinks, desserts):
+    print(list((cheezes, fruits, drinks, desserts))
+    
+    dict(zip(cheezes, fruits, drinks, desserts))
+        
+# List comprehension
+numb_list = []
+for i in range(1,6):
+    numb_list.append(i)
+print(numb_list)
+
+numb_list = [number for number in range(1,6)]
+print(numb_list)
+
+
+# list comprehension
+squares = list()
+for i in range(1,6):
+    squares.append(i*i)
+    print(squares)
+    
+squares = [i*i for i in range(1,6)]
+print(squares)
+
+a_list = [number for number in range(1,6) if number % 2 == 1]
+a_list
+b_list = [number for number in range(1,6) if number % 2 == 0]
+b_list
+
+even_squares = [i*i for i in range(1,6) if  i % 2  == 0]
+print(even_squares)
+
+rows = range(1,4)
+cols = range(1,3)
+for row in rows:
+    for col in cols:
+        print(cols)
+cells = [(row,col)for row in rows for col in cols]
+for cell in cells:
+    print(cell)
+#unpack
+for row, col in cells:
+    print(row,col)
+    
+small_birds = ['hummingbird', 'finsh']
+extinced_birds = ['dodo, 'passengert pigeon', ]
+#page 173 이어서
+
+# dict = 표로 사용 가능?
+#no tuple comporehension
