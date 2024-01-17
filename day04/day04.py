@@ -243,3 +243,38 @@ extinced_birds = ['dodo, 'passengert pigeon', ]
 
 # dict = 표로 사용 가능?
 #no tuple comporehension
+
+
+#dictionary
+customer = {'first':'wile', 'middle': 'E','last': 'Coyote'}
+customer
+x = dict(name = 'Elmer', def ' hunter') # 예약어 사용 불가
+lol = [['a','b'],['c','d']['e','f']]
+dict(lol)
+lot = [('a','b'),('c','d')('e','f')]
+dict(lot)
+los = ['ab','cd','ef']
+dict(los)
+tos = ('ab','cd','ef')
+dict(tos)
+
+# byteaway, list, dict, set -mutable
+sweets = {'apple':'pie','cherry':'ade','banana':'bread','dark': 'chocolate'}
+sweets['Gilliam'] = 'Gerry'
+sweets
+
+sugang = dict(python = "kim", cpp = "sug", db = "kang")
+print(sugang)
+sugang['datastructure'] = "kim"
+sugang['datastructure'] = "park"
+print(sugang)
+print(sugang['db'])
+print(sugang.get('db'))
+print(sugang.get('opensource','not exist'))
+for subject, professor in sugang.items():
+    print(f'{subject} 과목 담당교수는 {professor}입니다.')
+    
+for k in sugang.keys():
+    print(k)
+for v in sugang.values():
+    print(v)
