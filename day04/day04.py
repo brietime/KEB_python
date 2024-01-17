@@ -194,7 +194,7 @@ fruits = ['banana','apple','mango']
 drinks = ['coffee', 'juice','tea']
 desserts = ['tiramisu','macaron','pie','icecream']
 for cheeze, fruit, drink, dessert in zip(cheezes, fruits, drinks, desserts):
-    print(list((cheezes, fruits, drinks, desserts))
+    print(list((cheezes, fruits, drinks, desserts)))
     
     dict(zip(cheezes, fruits, drinks, desserts))
         
@@ -238,7 +238,7 @@ for row, col in cells:
     print(row,col)
     
 small_birds = ['hummingbird', 'finsh']
-extinced_birds = ['dodo, 'passengert pigeon', ]
+extinced_birds = ['dodo', 'passengert pigeon' ]
 #page 173 이어서
 
 # dict = 표로 사용 가능?
@@ -248,7 +248,7 @@ extinced_birds = ['dodo, 'passengert pigeon', ]
 #dictionary
 customer = {'first':'wile', 'middle': 'E','last': 'Coyote'}
 customer
-x = dict(name = 'Elmer', def ' hunter') # 예약어 사용 불가
+# x = dict(name = 'Elmer', def ' hunter') # 예약어 사용 불가
 lol = [['a','b'],['c','d']['e','f']]
 dict(lol)
 lot = [('a','b'),('c','d')('e','f')]
@@ -280,20 +280,56 @@ for v in sugang.values():
     print(v)
 for s in sugang.items():
     print(s)
-    
-# 안주 추천
+
+# 안주 추천(다시)
+import random
+
 drinks_foods= {'고량주':'양꼬치','위스키':'초콜릿','와인':'치즈','소주':'삼겹살'}
+print(drinks_foods)
+# print(drinks_foods.pop('고량주'))
+del drinks_foods['위스키']
+drinks_foods['사케'] ='광어회'
+japan_drinks_foods = {'사케':'광어회','위스키':'낙곱새'}
+drinks_foods.update(japan_drinks_foods)
+
+
 drinks_foods_keys = list(drinks_foods)
-drink = input(f'다음 술 중에 고르세요.\n1){drinks_foods_keys[0]}, 2){drinks_foods_keys[1]}, 3){drinks_foods_keys[2]}, 4){drinks_foods_keys[3]}, 5)종료')
-if menu == '1':
-    print(f'{drinks_foods_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[0]]}입니다.')
-elif menu == '2':
-    print(f'{drinks_foods_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[1]]}입니다.')
-elif menu == '3':
-    print(f'{drinks_foods_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[2]]}입니다.')
-elif menu == '4':
-    print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]}입니다.')
-elif menu == '5':
-    print('다음에 또 오세요')
-    break
-    
+# print(drinks_foods_keys.pop(0))
+# print(drinks_foods)
+
+while True:
+    menu = input(f'다음 술 중에 고르세요.\n1){drinks_foods_keys[0]}, 2){drinks_foods_keys[1]}, 3){drinks_foods_keys[2]}, 4){drinks_foods_keys[3]}, 5){drinks_foods_keys[4]}, 6)오늘의 추천 7)종료 : ')
+
+    if menu == '1':
+        print(f'{drinks_foods_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[0]]}입니다.')
+    elif menu == '2':
+        print(f'{drinks_foods_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[1]]}입니다.')
+    elif menu == '3':
+        print(f'{drinks_foods_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[2]]}입니다.')
+    elif menu == '4':
+        print(f'{drinks_foods_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[3]]}입니다.')
+    elif menu == '5':
+        print(f'{drinks_foods_keys[4]}에 어울리는 안주는 {drinks_foods[drinks_foods_keys[4]]}입니다.')
+    elif menu == '6':
+        random_drink = random.choice(drinks_foods_keys)
+        print(f'오늘의 추천 메뉴는 {random_drink}와 {drinks_foods[random_drink]}입니다.')
+    elif menu == '7':
+        print('다음에 또 오세요')
+        break
+        
+
+# combine dict - shallowcopy
+first = {'a':'agony','b':'bliss'}
+second = {'b':'bagels','c':'candy'}
+{**first, **second}
+
+third = {'d':'donuts'}
+{**first, **third,**second}
+
+# combine: update() -deepcopy
+len(sweets)
+
+# in (T,F)
+# copy :shallow,deep
+# list mutable: copy 
+# 과제 -  책205p ~8.10
