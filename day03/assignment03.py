@@ -1,11 +1,14 @@
 while True:
     menu = input("1) fahrenheit -> celsius  2) Celsius -> fahrenheit  3) Prime number  4) Prime numbers(two input)  5) Quit Program : ")
+    
     if menu  == '1':
         fahrenheit = float(input('Input fahrenheit: '))
         print(f'Fahrenheit: {fahrenheit}F, Celsius: {((fahrenheit-32.0)*5.0/9.0):.4f}C')
+    
     elif menu == '2':
         celsius = float(input('Input Celcius: '))
         print(f'Celsius: {celsius}C, fahrenheit: {((celsius *9.0/5.0)+32.0):.4f}F')
+    
     elif menu == '3':
         number = int(input("Input number: "))
         is_prime = True
@@ -44,9 +47,12 @@ while True:
                     print(i, end = ' ')
         print()
     
-    else: 
+    elif menu == '5':
         print('Terminate Program.')
         break
+    
+    else: 
+        print('Invaild Syntax!')
 
 
 # 6.5.1
