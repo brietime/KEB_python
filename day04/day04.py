@@ -329,7 +329,3 @@ third = {'d':'donuts'}
 # combine: update() -deepcopy
 len(sweets)
 
-# in (T,F)
-# copy :shallow,deep
-# list mutable: copy 
-# 과제 -  책205p ~8.10
