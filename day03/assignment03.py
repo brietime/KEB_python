@@ -54,6 +54,10 @@ while True:
     else: 
         print('Invaild Syntax!')
 
+# 큰 수
+# 소수 계산 코드 중복
+# 효율화
+
 
 # 6.5.1
 list_651 = []
