@@ -196,6 +196,13 @@ def print_more(required1, required2, *args):
     
 print_more('cap','gloves','glasses','muffler','shoes')
 
+# * 는 tuple 반환 **는 dict 반환
+def print_args(**args):
+    print('Positional tuple', args)
+    
+print_args()
+print_args(3,2,1,'wait!','uh...')
+
 # 추가 질문 
 # 오버로딩-객체지향 언어에서, 같은 함수이름을 가져도 변수 개수가 다르면 다르게 적용되는것/ 파이썬에서 적용 x
 def a(n1,n2):
@@ -220,3 +227,35 @@ a(None)
 a('')
 a(-9)
 a([])
+
+
+# mutable, immutable
+outside = ['one','fine','day']
+def mangle(arg):
+    arg[1] = 'terrible!'
+    
+mangle(outside)
+
+print(isprime.__doc__) #double underscore __ : magic method
+
+# function: everything is object -> func는 object로 다뤄짐
+
+def squares(n):
+    return n*n
+
+def run_function(f, *number):
+    return f(*number)
+
+print(squares(7))
+print(run_function(squares, number:9))
+
+def squares(*n):
+    """
+    넘벼받은 수치 데이터들의 거듭제곱 값을 리ㅣ스트에 담아서 리턴 
+    :param : tuple
+    :
+    """
+    return [pow(i,2) for i in n]
+
+print(run_function(squares(7,5,2)))
+print(run_function(squares,9,10))
