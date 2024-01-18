@@ -49,4 +49,3 @@ squares_odds
 # 12 
 word = 'Got'
 for i in range(10):
-    
