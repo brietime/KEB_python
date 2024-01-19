@@ -117,7 +117,41 @@ s()
 # 10.1 
 class Pokemon:
     def __init__(self,name):
+        self.name = name
         print(f"{name} 포켓몬스터 생성")
+    def attack(self, target):
+        print(f'{self.name}이(가) {target.name}을(를) 공격!')
+        
+    
+charizard = Pokemon("리자몽")   
+pikachu = Pokemon('피카츄') # self 피카츄
+sqrirtle = Pokemon("꼬부기") # self 꼬부기
+charizard.attack(sqrirtle)
+# print(pikachu.name)
+# print(sqrirtle.name)
 
-pikachu = Pokemon("피카츄")
-squirtle = Pokemon("꼬부기")
+# pikachu = Pokemon()
+# squirtle = Pokemon()
+# pikachu.name = "피카츄"
+# pikachu.nemesis = squirtle
+# print(pikachu.name)
+# # print(pikachu.nemesis.name)
+# pikachu.nemesis.name = "꼬부기" #squirtle.name = "꼬부기"
+# print(pikachu.nemesis.name)
+# print(squirtle.nemesis.name)
+
+# print(pikachu)
+# print(squirtle)
+
+# 10.03 METHOD
+
+# 10.04 Initialization
+# __init__ 초기화 해주는 특수함수
+# self는 예약어 x, 다른 단어 사용 가능하지만 관용적으로 사용.
+# 실행시점의 객체의 정보를 담고 있음(피카츄 만들때는 피카츄, 꼬부기 만들고 나면 꼬부기)
+# 
+
+#  calss 간의 관계 -상속
+
+# 부모클래스의 객체가 들어갈 수 있는 자리에 자식 클래스 호환 가능(lstm)
+# 
