@@ -1,36 +1,65 @@
 # 9.1
 def good():
-    print(['Harry','Ron','Hermione'])
+    '''
+    chapter 9.01 
+    return: list
+    '''
+    name = input('Type your name: ').split()
+    return name
 
-good()
+print(good())
 
 # 9.2
-def get_odds():
-    odds_list = []
-    for i in range(10):
-        if i % 2 != 0:
-            odds_list.append(i)
-    print(odds_list[2])
-    
-get_odds()
+def get_odds(n) -> int:
+    """
+    1부터 n까지의 홀수를 발생시키는 제네레이터
+    :param n: int
+    :return: int
+    """
+    for i in range(1, n+1, 2):
+        yield i
+
+cnt = 0
+odds = get_odds(9)
+for odd in odds:
+    cnt = cnt + 1
+    if cnt == 3:
+        print(f'Third number is {odd}')
+        break   
 
 # 9.3 
-def test(func):
-    def new_func(*args,**kwargs):     
+# def test(func):
+#     '''
+#     데코레이터 함수, 함수 시작하면 start 출력, 함수 끝나면 end 출력
+#     :param f: function
+#     :return: closure function
+#     '''
+#     def new_func(*args,**kwargs):     
+#         print('start')  
+#         result = func(*args,**kwargs)
+#         print('end')
+#         return result
+#     return new_func
+
+def test(f):
+    '''
+    데코레이터 함수, 함수 시작하면 start 출력, 함수 끝나면 end 출력
+    :param f: function
+    :return: closure function
+    '''
+    def test_in(*args,**kwargs):     
         print('start')  
-        result = func(*args,**kwargs)
+        # result = func(*args,**kwargs)
+        f()
         print('end')
-    return new_func
+        # return result
+    return test_in
 
 @test
-def get_odds():
-    odds_list = []
-    for i in range(10):
-        if i % 2 != 0:
-            odds_list.append(i)
-    print(odds_list[2])
+def greeting():
+    print('안녕하세요~')
     
-get_odds()
+greeting()
         
 # 9.4
 import random
@@ -65,8 +94,19 @@ class OopsException(Exception):
         try: 
             menu != int(1,2,3,4,5,6,7)
             print('다음에 또 오세요')
+        # except IndexError:
+        #     print('Caught an Oops- index error index', menu) 
+        # except ValueError:
+        #     print('Caught an Oops-value error index', menu) 
+        # except Exception: 
+        #     print('Caught an oops')
         except IndexError as err:
-            print('Caught an Oops', menu) 
+            print('Caught an Oops\n{err}') 
+        except ValueError as err:
+            print('Caught an Oops\n{err}') 
+        except Exception as err: 
+            print('Caught an oops\n{err}')
+            
             
             
     
