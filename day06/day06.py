@@ -115,18 +115,19 @@ s()
 
 # 10 object and classes
 # 10.1 
-class Pokemon:
-    def __init__(self,name):
-        self.name = name
-        print(f"{name} 포켓몬스터 생성")
-    def attack(self, target):
-        print(f'{self.name}이(가) {target.name}을(를) 공격!')
+# class Pokemon:
+#     def __init__(self,name):
+#         self.name = name
+#         print(f"{name} 포켓몬스터 생성")
+#     def attack(self, target):
+#         print(f'{self.name}이(가) {target.name}을(를) 공격!')
         
     
-charizard = Pokemon("리자몽")   
-pikachu = Pokemon('피카츄') # self 피카츄
-sqrirtle = Pokemon("꼬부기") # self 꼬부기
-charizard.attack(sqrirtle)
+# charizard = Pokemon("리자몽")   
+# pikachu = Pokemon('피카츄') # self 피카츄
+# sqrirtle = Pokemon("꼬부기") # self 꼬부기
+# charizard.attack(sqrirtle)
+
 # print(pikachu.name)
 # print(sqrirtle.name)
 
@@ -154,4 +155,125 @@ charizard.attack(sqrirtle)
 #  calss 간의 관계 -상속
 
 # 부모클래스의 객체가 들어갈 수 있는 자리에 자식 클래스 호환 가능(lstm)
-# 
+# override
+
+class Pokemon:
+    def __init__(self, name):
+        self.name = name
+    
+    def attack(self, target):
+        print(f"{self.name}이(가) {target.name}을(를) 공격!")
+    
+    
+class Pikachu(Pokemon): # is-a 상속 관계
+    def __init__(self, attack, type):
+        super().__init__(attack)
+        self.type = type
+    
+    def attack(self, target):
+        print(f"{self.name}이(가) {target.name}을(를) {type.name} 공격!")
+    def type(self):
+        print(f"{type.name}계열의 공격을 합니다.")
+    
+class Squirtle(Pokemon): # is-a 상속 관계
+    pass
+
+p1 = Pikachu("피카츄", "전기")
+p2 = Squirtle("꼬부기")
+p3 = Pokemon("파이리")
+p1.electric_info()
+# p3.electric_info()
+p1.attack(p2)
+p2.attack(p1)
+print(p1.name)
+print(issubclass(Pikachu,Squirtle))
+
+
+class Animal:
+    def says(self):
+        return 'I am speak!'
+    
+class Horse(Animal):
+    # def says(self):
+    #     return '말말'
+    pass
+
+class Donkey(Animal):
+    # def says(self):
+    #     return 's나ㅜ기'
+    pass
+
+class Mule(Donkey,Horse):
+    def says(self):
+        return '노새노새'
+    pass
+
+class Hinny(Horse, Donkey):
+    def says(self):
+        return '버새 버새'
+    pass
+
+m1 = Mule()
+h1 = Hinny()
+print(Hinny.__mro__)
+print(m1.says())
+
+# Mixins
+# 다른 부모 클래스들과 클래스 쉐어 x
+class FlyingMixin:
+    def fly(self):
+        return f"{self.hidden_name}이(가) 하늘을 훨훨 날아갑니다~"
+
+class SwimmingMixin:
+    def swim(self):
+        return f"{self.hidden_name}이(가) 수영을 합니다."
+
+class Pokemon:
+    def __init__(self, name):
+        self.hidden_name = name
+
+    def attack(self):
+        print("공격~")
+
+    @property
+    def name(self):
+        return self.hidden_name
+
+    @name.setter
+    def name(self, new_name):
+        self.hidden_name = new_name
+
+    #name = property(get_name, set_name)
+
+
+class Charizard(Pokemon, FlyingMixin):
+    pass
+
+class Gyarados(Pokemon, SwimmingMixin):
+    pass
+
+g1 = Gyarados("갸라도스")
+c1 = Charizard("리자몽")
+
+# print(g1.get_name())
+# g1.set_name("잉어킹")
+# print(g1.get_name())
+
+# property 2nd
+print(g1.name)
+g1.name = "잉어킹"
+print(g1.name)
+
+#property를 이용한
+print(g1.name)
+g1.name = "잉어킹" 
+print(g1.name)
+
+#property 3rd
+print(g1.name)
+# print(g1.__name) # no direct access
+print(g1._Pokemon__name) # 사실상 private 개념 없음
+
+
+# pokemon game 컴퓨터랑 전투
+# 필드, 기능(공격 - 랜덤 넣어서 확률 넘으면 공격 들어가게, 진화, ...),
