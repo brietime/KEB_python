@@ -65,7 +65,8 @@ print(numbers)
 try:
     pick = int(input(f"Input index (0 ~ {len(numbers)-1}): ")) 
     print(numbers(pick))
-    print(5/0)
+    print(5/2)
+    raise OopsException("Oops~") # exception!
 # except IndexError:
 #     print(f'Out of range: shold got index number 0 ~ {len(numbers)-1} but got {pick}!')
 except IndexError as err:
@@ -78,9 +79,45 @@ except ValueError:
         
 except ZeroDivisionError as err:
     print(f'Denominator cannot be 0.\n{err}')
-    
+except OopsException as  err:
+    print(f"Oops Oops {err}")
 except Exception as err:
-    print(f'Error ocurs'{err})
+    print(f'Error ocurr {err}')
+else:
+    print(f"Program terminate")
     
+# def desc():
+#     def wrapper():
+#         print('w')
+#     print('a')
+#     return wrapper 
+
+# def something():
+#     print("do something")
+# desc() #'a' not 'w' if 'w', its becuz of return wrapper
+    
+ # 개방폐쇄 good
+def desc(f):
+    def wrapper():
+        print("study")
+        f()
+    return wrapper 
 
 
+def something():
+    print("do something")
+
+s = desc(something) 
+s()
+
+# something()
+
+
+# 10 object and classes
+# 10.1 
+class Pokemon:
+    def __init__(self,name):
+        print(f"{name} 포켓몬스터 생성")
+
+pikachu = Pokemon("피카츄")
+squirtle = Pokemon("꼬부기")
