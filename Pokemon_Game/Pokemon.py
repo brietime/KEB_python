@@ -1,42 +1,40 @@
 from Field_Setting import *
 
 class Pokemon:
-    def __init__(self, name, type):
+    def __init__(self, name, type, life):
         self.__name = name
         self.type = type
-    
+        self.life = life
+        
     def attack(self):
-        print("공격~")
+        return life -3
     
     def HP(name, combat_field, type):
+        life = 10
         if combat_field(stage) == given_field(type):
-            
-    @property
-    def name(self):
-        return self.__name
-
-    @name.setter
-    def name(self, new_name):
-        self.__name = new_name
-
-    # magic method
-    def __str__(self):
-        return self.__name + " 입니다"
+            life += 2
 
 
-
-class Charizard(Pokemon): # 다중 상속중
-    pass
 
 class Pikachu(Pokemon):
     pass
 
-p1 = Pikachu("피카츄", "electric") # LSP
+class Pengdori(Pokemon):
+    pass
+
+class Paiery(Pokemon):
+    pass
+
+class Charizard(Pokemon): # 다중 상속중
+    pass
+
+p1 = Pikachu("피카츄", "electric")
+p2 = Pengdori("펭도리", "water")
+p3 = Paiery("파이리", "fire")# LSP
+
+
 c1 = Charizard("리자몽", "fire") # LSP
 
-print(p1)
-print(c1)
-print(p1+c1)
 
 
 # assosiation: aggergation(부품 분리 가능) & composition(부품 분리 불가)
