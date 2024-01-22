@@ -115,7 +115,7 @@ while True:
     
     if menu  == '1':
         fahrenheit = float(input('Input fahrenheit: '))
-        print(f'Fahrenheit: {fahrenheit}F, Celsius: {((fahrenheit-32.0)*5.0/9.0):.4f}C')
+        print(f'Fahrenheit: {fahrenheit}F, Celsius: {mymath.fahrenheit_to_celcius(fahrenheit):.4f}C')
     
     elif menu == '2':
         celsius = float(input('Input Celcius: '))
